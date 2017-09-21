@@ -17,7 +17,7 @@
                       .$_POST['Mgr_ssn'].","
                       .$_POST['Mgr_start_date'].
                       ");"; 
-      mysql_db_query($con,$addDeparment);
+      mysqli_query($con,$addDeparment);
     ?>
   </body>
   </html>
