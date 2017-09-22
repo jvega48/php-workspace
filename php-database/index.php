@@ -1,7 +1,7 @@
 <html>
   
   <head>
-  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <?php
 
   $connect = mysqli_connect("localhost", "root", "root1");
@@ -75,7 +75,7 @@
   
 </table>
   <br />
-  <form align="center">
+  <form align="center" action="addDepartment.php" method="POST">
      <table align="center">
        <tr>
           <td>
@@ -90,7 +90,7 @@
               Department Number:
           </td>
           <td>
-              <input type="text" name="Dnumber">
+              <input type="text" name="Dnumber" id="Dnumber"><span id="errorMsg" class="errorMsg"/>
           </td>
      </tr>
      <tr>
@@ -118,26 +118,16 @@
 </form>
   
   <script>
-  
-  var $ = function(id)
-  
-  {
-  
+  var $ = function(id){
     return document.getElementById(id);
-  
   }
   
-  
-  var errorReport = function()
-  
-  {
-   if($("Dname").value == "")
-    {
+  var errorReport = function(){
+   if($("Dname").value == ""){
       $("errorMsg").innerHTML = "Can't be empty";
       return false;
     }
   }
-  
   $("submit").onclick=errorReport;
   </script>
   </body>

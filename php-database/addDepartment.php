@@ -11,14 +11,18 @@
   </head>
   <body>
     <?php
-      $addDeparment = "INSERT INTO department values ("
-                      .$_POST['Dname'].","
-                      .$_POST['Dnumber'].","
-                      .$_POST['Mgr_ssn'].","
+      $addDepartment = "INSERT INTO department values ('"
+                      .$_POST['Dname']."',"
+                      .$_POST['Dnumber'].", '"
+                      .$_POST['Mgr_ssn']."', '"
                       .$_POST['Mgr_start_date'].
-                      ");"; 
-      mysqli_query($con,$addDeparment);
+                      "');"; 
+      mysqli_query($con,$addDepartment);
+      print $addDepartment;
+
+      header("Refresh:6; url=index.php");
     ?>
+    <h1>Record Inserted.</h1>
   </body>
   </html>
   
